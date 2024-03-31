@@ -30,5 +30,9 @@ private fun Body(navController: NavHostController) {
         ButtonModel(label = "To Boxes Screen", color = MaterialTheme.colorScheme.tertiary) {
             navController.navigate("boxes_screen")
         }
+        Spacer(modifier = Modifier.height(20.dp))
+        ButtonModel(label = "To Login Screen", color = MaterialTheme.colorScheme.tertiary) {
+            navController.navigate("login_screen")
+        }
     }
 }

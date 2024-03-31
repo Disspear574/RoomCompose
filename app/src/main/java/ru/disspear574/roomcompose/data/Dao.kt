@@ -17,6 +17,8 @@ interface Dao {
 //    @Query(value = "DELETE FROM sqlite_sequence")
     suspend fun deleteAllUsers()
 
+    @Query(value = "SELECT id, password FROM users WHERE email = :email")
+    suspend fun findByEmail(email:String): accountsSignInTuple
     @Query(value = "SELECT * FROM users")
     fun getAllUsers(): Flow<List<UserEntity>>
 

@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ru.disspear574.roomcompose.presentation.AccountsScreen
 import ru.disspear574.roomcompose.presentation.BoxesScreen
+import ru.disspear574.roomcompose.presentation.LoginScreen
 import ru.disspear574.roomcompose.presentation.SettingsScreen
 
 @Composable
@@ -64,5 +65,18 @@ fun navHost(navController: NavHostController) {
                 BoxesScreen().Content(navController = navController)
             },
         )
+        composable(
+            "login_screen",
+            enterTransition = {
+                slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Start)
+            },
+            exitTransition = {
+                slideOutOfContainer(AnimatedContentTransitionScope.SlideDirection.End)
+            },
+            content = {
+                LoginScreen().Content(navController = navController)
+            },
+        )
+
     }
 }
